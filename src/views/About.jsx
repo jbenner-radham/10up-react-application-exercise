@@ -7,7 +7,7 @@ function About() {
                 About
             </h1>
 
-            <div class="page">
+            <div className="page">
                 {/* Retrieve about text from WP API. */}
                 10up about text...
             </div>

@@ -7,7 +7,7 @@ function Login() {
                 Login
             </h1>
 
-            <div class="login">
+            <div className="login">
                 <form method="post">
                     <div>
                         <label htmlFor="username">Username</label>
