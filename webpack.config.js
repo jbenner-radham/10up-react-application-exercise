@@ -1,7 +1,7 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
-const isProduction = () => process.NODE_ENV?.toLowerCase() === 'production';
+const isProduction = () => process.env.NODE_ENV?.toLowerCase() === 'production';
 
 module.exports = {
     entry: './src/index.js',
@@ -19,7 +19,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            isProduction() ? 'react-app/prod' : 'react-app',
+                            isProduction() ? 'babel-preset-react-app/prod' : 'babel-preset-react-app',
                             '@babel/preset-env'
                         ]
                     }
