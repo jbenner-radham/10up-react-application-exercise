@@ -1,0 +1,33 @@
+{
+  "name": "react-application-lab",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A React application exercise.",
+  "main": "./src/index.js",
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jwt",
+    "react"
+  ],
+  "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "babel-loader": "^9.0.0",
+    "babel-preset-react-app": "^10.0.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2"
+  }
+}
