@@ -1,8 +1,11 @@
 import React from 'react';
+import RequireAuth from '../components/RequireAuth';
 
 function Home() {
     return (
         <>
+            <RequireAuth />
+
             {/* Should only show when user is logged in */}
             <section className="welcome logged-in">
                 Welcome username!
