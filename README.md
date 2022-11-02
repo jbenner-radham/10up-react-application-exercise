@@ -32,3 +32,11 @@ The API is the default WordPress REST API provided with WordPress. The relevant 
   Authorization: Bearer TOKEN
   ```
 
+## Running the App
+
+Before starting the app you'll need to build it. You have two options for doing so:
+
+* `npm run build:dev` - Generate a development build
+* `npm run build:prod` - Generate a production build
+
+Once the above is complete simply run `npm run serve` to launch a dev server instance of the app. After the command runs it will display a message indicating the web address you can reach the app at. Please note you will have to start at the root path (`/`) to browse the site due to how [React Router](https://reactrouter.com/) works. To configure a server to overcome this limitation see [here](https://github.com/remix-run/react-router/blob/v1.0.0/docs/guides/basics/Histories.md#configuring-your-server) for examples.
