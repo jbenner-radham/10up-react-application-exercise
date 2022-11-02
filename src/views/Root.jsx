@@ -5,10 +5,11 @@ import { useAuth } from '../auth';
 function Root() {
     const navigate = useNavigate();
     const { user, logout } = useAuth();
+    const url = new URL(window.location.href);
 
     useEffect(() => {
-        if (!user) navigate('/login');
-    }, [user]);
+        if (url.pathname === '/') navigate('/home');
+    }, [url]);
 
     async function handleLogout(event) {
         event.preventDefault();
