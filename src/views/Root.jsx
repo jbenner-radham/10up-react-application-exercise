@@ -38,15 +38,15 @@ function Root() {
                             <Link to="/about">About</Link>
                         </li>
 
-                        {/* Should only show when user is logged out */}
-                        <li className="logged-out menu-item menu-item-type-custom menu-item-object-custom menu-item-1915">
-                            <Link to="/login">Login</Link>
-                        </li>
-
-                        {/* Should only show when user is logged in */}
-                        <li className="logged-in menu-item menu-item-type-custom menu-item-object-custom menu-item-1915">
-                            <a href="#" onClick={handleLogout}>Logout</a>
-                        </li>
+                        { !user ?
+                            <li className="logged-out menu-item menu-item-type-custom menu-item-object-custom menu-item-1915">
+                                <Link to="/login">Login</Link>
+                            </li>
+                            :
+                            <li className="logged-in menu-item menu-item-type-custom menu-item-object-custom menu-item-1915">
+                                <a href="#" onClick={handleLogout}>Logout</a>
+                            </li>
+                        }
                     </ul>
                 </nav>
             </header>
