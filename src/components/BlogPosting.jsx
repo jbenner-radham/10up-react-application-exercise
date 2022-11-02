@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import React from 'react';
 
 function BlogPosting({ blogPost }) {
@@ -40,20 +41,23 @@ function BlogPosting({ blogPost }) {
 
                 {/* publication date */}
                 <div className="date">
-                    <strong>Publish Date</strong>:
+                    <strong>Publish Date</strong>:{' '}
                     <span itemProp="datePublished">
                         <time dateTime={dateTime}>{humanReadableDate}</time>
                     </span>
                 </div>
 
                 <div className="author">
-                    <strong>Author</strong>:
-                    <span itemProp="author">{blogPost?.author}</span>
+                    <strong>Author</strong>:{' '}
+                    <span itemProp="author">{blogPost?.yoast_head_json?.author}</span>
                 </div>
             </header>
 
-            <div itemProp="articleBody" className="content">
-                {blogPost?.content?.rendered}
+            <div
+                itemProp="articleBody"
+                className="content"
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blogPost?.content?.rendered) }}
+            >
             </div>
         </article>
     );
