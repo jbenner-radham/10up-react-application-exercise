@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 function About() {
     const [about, setAbout] = useState(null);
 
+    document.title = '10up Blog - About';
+
     async function getPages() {
         const url = 'https://js1.10up.com/wp-json/wp/v2/pages';
         const options = {

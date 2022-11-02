@@ -6,6 +6,8 @@ function Login() {
     const navigate = useNavigate();
     const { login, user } = useAuth();
 
+    document.title = '10up Blog - Login';
+
     useEffect(() => {
         if (user) navigate('/home');
     }, [user]);

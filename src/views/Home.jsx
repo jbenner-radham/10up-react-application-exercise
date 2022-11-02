@@ -6,6 +6,8 @@ function Home() {
     const { user } = useAuth();
     const [posts, setPosts] = useState([]);
 
+    document.title = '10up Blog';
+
     async function getPosts() {
         const url = 'https://js1.10up.com/wp-json/wp/v2/posts';
         const options = {
