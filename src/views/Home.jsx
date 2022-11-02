@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BlogPosting from '../components/BlogPosting';
 import RequireAuth from '../components/RequireAuth';
 import { useAuth } from '../auth';
@@ -18,7 +18,9 @@ function Home() {
         return posts;
     }
 
-    getPosts().then(setPosts);
+    useEffect(() => {
+        getPosts().then(setPosts);
+    }, []);
 
     return (
         <>
