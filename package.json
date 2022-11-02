@@ -1,5 +1,5 @@
 {
-  "name": "react-application-lab",
+  "name": "10up-react-application-exercise",
   "private": true,
   "version": "0.0.0",
   "description": "A React application exercise.",
@@ -15,7 +15,8 @@
   },
   "keywords": [
     "jwt",
-    "react"
+    "react",
+    "wordpress"
   ],
   "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
   "license": "MIT",
