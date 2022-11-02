@@ -8,6 +8,14 @@
     "react",
     "wordpress"
   ],
+  "homepage": "https://github.com/jbenner-radham/10up-react-application-exercise#readme",
+  "bugs": {
+    "url": "https://github.com/jbenner-radham/10up-react-application-exercise/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbenner-radham/10up-react-application-exercise.git"
+  },
   "license": "MIT",
   "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
   "main": "./src/index.js",
