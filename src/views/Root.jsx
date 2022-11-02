@@ -1,7 +1,21 @@
-import { Link, Outlet } from 'react-router-dom';
-import React from 'react';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useAuth } from '../auth';
 
 function Root() {
+    const navigate = useNavigate();
+    const { user, logout } = useAuth();
+
+    useEffect(() => {
+        if (!user) navigate('/login');
+    }, [user]);
+
+    async function handleLogout(event) {
+        event.preventDefault();
+
+        logout();
+    }
+
     return (
         <>
             <header className="site-header" role="banner" itemScope="itemscope" itemType="http://schema.org/WPHeader">
@@ -31,7 +45,7 @@ function Root() {
 
                         {/* Should only show when user is logged in */}
                         <li className="logged-in menu-item menu-item-type-custom menu-item-object-custom menu-item-1915">
-                            <Link to="/logout">Logout</Link>
+                            <a href="#" onClick={handleLogout}>Logout</a>
                         </li>
                     </ul>
                 </nav>

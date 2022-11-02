@@ -11,7 +11,7 @@ function Home() {
 
             {/* Should only show when user is logged in */}
             <section className="welcome logged-in">
-                Welcome {user.user_display_name}!
+                Welcome {user?.user_display_name}!
             </section>
 
             {/* Retrieve blog posts from WP API. */}
