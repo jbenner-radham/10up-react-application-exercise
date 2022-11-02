@@ -30,7 +30,6 @@ function Root() {
                         <span aria-hidden="true">☰</span>
                     </a>
 
-                    {/* Make sure to update menu links to work with your app. */}
                     <ul id="menu-main-nav" className="primary-menu">
                         <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1912">
                             <Link to="/home">Home</Link>
