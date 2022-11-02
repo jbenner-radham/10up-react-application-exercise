@@ -1,5 +1,7 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isProduction = () => process.env.NODE_ENV?.toLowerCase() === 'production';
 
@@ -12,6 +14,13 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
+            },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
@@ -32,8 +41,17 @@ module.exports = {
             patterns: [
                 { from: 'public' }
             ]
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
         })
     ],
+    optimization: {
+        minimizer: [
+            new CssMinimizerPlugin(),
+            '...'
+        ]
+    },
     resolve: {
         extensions: [
             '.jsx',

@@ -34,13 +34,17 @@
     "babel-preset-react-app": "^10.0.1",
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.26.0",
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "mini-css-extract-plugin": "^2.6.1",
     "rimraf": "^3.0.2",
     "serve": "^14.0.1",
     "sort-package-json": "^2.0.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   }

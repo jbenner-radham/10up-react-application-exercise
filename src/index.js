@@ -6,6 +6,11 @@ import About from './views/About';
 import Home from './views/Home';
 import Login from './views/Login';
 import Root from './views/Root';
+import '../assets/css/layout.css';
+import '../assets/css/header.css';
+import '../assets/css/post.css';
+import '../assets/css/login.css';
+
 
 const router = createBrowserRouter([
     {
