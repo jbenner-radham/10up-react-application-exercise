@@ -22,6 +22,8 @@ function Home() {
         getPosts().then(setPosts);
     }, []);
 
+    let postIndex = 0;
+
     return (
         <>
             <RequireAuth />
@@ -33,7 +35,7 @@ function Home() {
 
             {/* Retrieve blog posts from WP API. */}
             <div itemScope itemType="https://schema.org/Blog">
-                {posts.map(post => <BlogPosting blogPost={post} />)}
+                {posts.map(post => <BlogPosting blogPost={post} key={(postIndex++).toString()} />)}
             </div>
         </>
     );
