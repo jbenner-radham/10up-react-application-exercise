@@ -1,11 +1,8 @@
 import React from 'react';
-import RequireAuth from '../components/RequireAuth';
 
 function About() {
     return (
         <>
-            <RequireAuth />
-
             <h1>
                 About
             </h1>
