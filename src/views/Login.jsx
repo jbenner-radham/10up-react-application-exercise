@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth';
+import VerifyAuth from '../components/VerifyAuth';
 
 function Login() {
     const navigate = useNavigate();
@@ -22,6 +23,8 @@ function Login() {
 
     return (
         <div className="Login">
+            <VerifyAuth />
+
             <h1>
                 Login
             </h1>

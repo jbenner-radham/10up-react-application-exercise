@@ -1,5 +1,6 @@
 import DOMPurify from 'dompurify';
 import React, { useEffect, useState } from 'react';
+import VerifyAuth from '../components/VerifyAuth';
 
 function About() {
     const [about, setAbout] = useState(null);
@@ -27,6 +28,8 @@ function About() {
 
     return (
         <>
+            <VerifyAuth />
+
             <h1>
                 About
             </h1>

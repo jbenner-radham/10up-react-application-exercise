@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BlogPosting from '../components/BlogPosting';
 import { useAuth } from '../auth';
+import VerifyAuth from '../components/VerifyAuth';
 
 function Home() {
     const { user } = useAuth();
@@ -27,6 +28,8 @@ function Home() {
 
     return (
         <>
+            <VerifyAuth />
+
             {/* Should only show when user is logged in */}
             {user && <section className="welcome logged-in">
                 Welcome {user?.user_display_name}!

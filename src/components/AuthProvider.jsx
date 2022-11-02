@@ -2,7 +2,7 @@ import React from 'react';
 import { AuthContext } from '../auth';
 
 function AuthProvider({ children }) {
-    const [user, setUser] = React.useState();
+    const [user, setUser] = React.useState(null);
 
     async function login(formData) {
         const url = 'https://js1.10up.com/wp-json/jwt-auth/v1/token';
