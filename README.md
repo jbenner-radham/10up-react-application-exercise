@@ -27,8 +27,8 @@ The API is the default WordPress REST API provided with WordPress. The relevant 
     "password": "PASSWORD"
   }
   ```
-* `POST https://js1.10up.com/wp-json/jwt-auth/v1/token/validate` - Check whether an existing token is valid or not. For this request, pass along the `Authentication` header like so:
+* `POST https://js1.10up.com/wp-json/jwt-auth/v1/token/validate` - Check whether an existing token is valid or not. For this request, pass along the `Authorization` header like so:
   ```
-  Authentication: Bearer TOKEN
+  Authorization: Bearer TOKEN
   ```
 
