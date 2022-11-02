@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../auth';
 
 function AuthProvider({ children }) {
@@ -22,7 +21,24 @@ function AuthProvider({ children }) {
         setUser(null);
     }
 
-    const value = { user, login, logout };
+    async function isTokenValid() {
+        if (!user?.token) return false;
+
+        const url = 'https://js1.10up.com/wp-json/jwt-auth/v1/token/validate';
+        const options = {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                Authorization: `Bearer ${user.token}`
+            }
+        };
+        const response = await fetch(url, options);
+        const validationData = await response.json();
+
+        return validationData?.code === 'jwt_auth_valid_token' && validationData?.data?.status === 200;
+    }
+
+    const value = { user, login, logout, isTokenValid };
 
     return (
         <AuthContext.Provider value={value}>
