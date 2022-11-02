@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import React from 'react';
+import AuthProvider from './components/AuthProvider';
 import About from './views/About';
 import Home from './views/Home';
 import Login from './views/Login';
@@ -31,6 +32,8 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <AuthProvider>
+            <RouterProvider router={router} />
+        </AuthProvider>
     </React.StrictMode>
 );
