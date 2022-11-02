@@ -1,8 +1,15 @@
 {
   "name": "10up-react-application-exercise",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "description": "A React application exercise.",
+  "keywords": [
+    "jwt",
+    "react",
+    "wordpress"
+  ],
+  "license": "MIT",
+  "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
   "main": "./src/index.js",
   "scripts": {
     "prebuild": "rimraf ./dist",
@@ -13,13 +20,12 @@
     "serve": "serve dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "jwt",
-    "react",
-    "wordpress"
-  ],
-  "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
-  "license": "MIT",
+  "dependencies": {
+    "dompurify": "^2.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
@@ -33,11 +39,5 @@
     "serve": "^14.0.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
-  },
-  "dependencies": {
-    "dompurify": "^2.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2"
   }
 }
