@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import BlogPosting from '../components/BlogPosting';
-import RequireAuth from '../components/RequireAuth';
 import { useAuth } from '../auth';
 
 function Home() {
@@ -26,12 +25,10 @@ function Home() {
 
     return (
         <>
-            <RequireAuth />
-
             {/* Should only show when user is logged in */}
-            <section className="welcome logged-in">
+            {user && <section className="welcome logged-in">
                 Welcome {user?.user_display_name}!
-            </section>
+            </section>}
 
             {/* Retrieve blog posts from WP API. */}
             <div itemScope itemType="https://schema.org/Blog">
