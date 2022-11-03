@@ -12,6 +12,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
+    devServer: {
+        historyApiFallback: true,
+        static: {
+            directory: path.resolve(__dirname, 'dist')
+        },
+        port: 8080
+    },
     module: {
         rules: [
             {

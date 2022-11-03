@@ -24,6 +24,7 @@
     "build": "webpack",
     "build:dev": "cross-env NODE_ENV=development npm run build",
     "build:prod": "cross-env NODE_ENV=production npm run build",
+    "dev": "cross-env NODE_ENV=development webpack serve",
     "lint:js": "eslint src",
     "prepare": "husky install",
     "serve": "serve dist",
@@ -54,7 +55,8 @@
     "sort-package-json": "^2.0.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "engines": {
     "node": ">=18.11",
