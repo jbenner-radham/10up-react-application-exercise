@@ -27,7 +27,7 @@
     "dev": "cross-env NODE_ENV=development webpack serve",
     "lint:js": "eslint src",
     "prepare": "husky install",
-    "serve": "serve dist",
+    "serve": "serve --single dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
