@@ -35,3 +35,10 @@ rules:
     - error
     - destructuring: any
       ignoreReadBeforeAssign: false
+overrides:
+  - files:
+      - webpack.config.js
+    env:
+      node: true
+    parserOptions:
+      sourceType: commonjs
