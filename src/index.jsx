@@ -1,11 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, redirect, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import React from 'react';
 import AuthProvider from './components/AuthProvider';
 import About, { loader as aboutLoader } from './views/About';
 import ErrorPage from './views/ErrorPage';
 import Home, { loader as homeLoader } from './views/Home';
-import Index from './views/Index';
 import Login from './views/Login';
 import Root from './views/Root';
 import '../assets/css/layout.css';
@@ -22,7 +21,9 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Index />
+                loader() {
+                    return redirect('/home');
+                }
             },
             {
                 path: 'about',
