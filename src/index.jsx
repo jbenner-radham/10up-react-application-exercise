@@ -14,7 +14,6 @@ import '../assets/css/post.css';
 import '../assets/css/login.css';
 import '../assets/css/error-page.css';
 
-
 const router = createBrowserRouter([
     {
         path: '/',
