@@ -19,6 +19,7 @@ module.exports = {
         },
         port: 8080
     },
+    devtool: isProduction() ? 'source-map' : 'eval-source-map',
     module: {
         rules: [
             {
