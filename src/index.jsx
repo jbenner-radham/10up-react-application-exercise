@@ -2,9 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import React from 'react';
 import AuthProvider from './components/AuthProvider';
-import About from './views/About';
+import About, { loader as aboutLoader } from './views/About';
 import ErrorPage from './views/ErrorPage';
-import Home from './views/Home';
+import Home, { loader as homeLoader } from './views/Home';
+import Index from './views/Index';
 import Login from './views/Login';
 import Root from './views/Root';
 import '../assets/css/layout.css';
@@ -21,11 +22,17 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
+                index: true,
+                element: <Index />
+            },
+            {
                 path: 'about',
+                loader: aboutLoader,
                 element: <About />
             },
             {
                 path: 'home',
+                loader: homeLoader,
                 element: <Home />
             },
             {

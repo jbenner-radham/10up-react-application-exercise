@@ -1,15 +1,9 @@
-import { Link, Outlet, useNavigate } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import React from 'react';
 import { useAuth } from '../auth';
 
 function Root() {
-    const navigate = useNavigate();
     const { user, logout } = useAuth();
-    const url = new URL(window.location.href);
-
-    useEffect(() => {
-        if (url.pathname === '/') navigate('/home');
-    }, [url]);
 
     async function handleLogout(event) {
         event.preventDefault();
