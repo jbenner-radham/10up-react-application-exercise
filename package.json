@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
-  "main": "./src/index.js",
+  "main": "./src/index.jsx",
   "scripts": {
     "prebuild": "rimraf ./dist",
     "build": "webpack",
