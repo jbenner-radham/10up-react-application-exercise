@@ -5,21 +5,30 @@ import { AuthContext } from '../auth';
 function AuthProvider({ children }) {
     const [user, setUser] = React.useState(null);
 
-    async function login(formData) {
+    async function login(formData, callback) {
         const url = 'https://js1.10up.com/wp-json/jwt-auth/v1/token';
         const options = {
             body: formData,
             method: 'POST',
             mode: 'cors'
         };
-        const response = await fetch(url, options);
-        const userData = await response.json();
+        let response = {};
 
-        setUser(userData);
+        try {
+            response = await fetch(url, options);
+            const userData = await response.json();
+            setUser(userData);
+        } catch (error) {
+            response.ok = false;
+            setUser(null);
+        } finally {
+            callback?.(response);
+        }
     }
 
-    function logout() {
+    function logout(callback) {
         setUser(null);
+        callback?.();
     }
 
     async function isTokenValid() {

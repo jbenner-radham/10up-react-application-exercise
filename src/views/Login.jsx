@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth';
 import VerifyAuth from '../components/VerifyAuth';
 
 function Login() {
+    const [loginError, setLoginError] = useState(null);
     const navigate = useNavigate();
     const { login, user } = useAuth();
 
@@ -18,7 +19,10 @@ function Login() {
 
         const formData = new FormData(event.currentTarget);
 
-        login(formData);
+        login(formData, (response) => {
+            if (response.status === 403) setLoginError('Your login information was not accepted.');
+            else if (!response.ok) setLoginError('Sorry, an unexpected error occurred.');
+        });
     }
 
     return (
@@ -30,6 +34,10 @@ function Login() {
             </h1>
 
             <div className="login">
+                {loginError && <div className="login-error" role="alert" aria-live="polite">
+                    <p>{loginError}</p>
+                </div>}
+
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="username">Username</label>{' '}
