@@ -1,4 +1,5 @@
 import DOMPurify from 'dompurify';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 function BlogPosting({ blogPost }) {
@@ -62,5 +63,20 @@ function BlogPosting({ blogPost }) {
         </article>
     );
 }
+
+BlogPosting.propTypes = {
+    blogPost: PropTypes.shape({
+        date: PropTypes.string.isRequired,
+        title: PropTypes.shape({
+            rendered: PropTypes.string.isRequired
+        }).isRequired,
+        yoast_head_json: PropTypes.shape({
+            author: PropTypes.string.isRequired
+        }).isRequired,
+        content: PropTypes.shape({
+            rendered: PropTypes.string.isRequired
+        }).isRequired
+    }).isRequired
+};
 
 export default BlogPosting;

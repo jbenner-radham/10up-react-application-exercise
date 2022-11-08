@@ -25,13 +25,14 @@
     "build:dev": "cross-env NODE_ENV=development npm run build",
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "dev": "cross-env NODE_ENV=development webpack serve",
-    "lint:js": "eslint src",
+    "lint:js": "eslint src/**/*.{js,jsx} *.js",
     "prepare": "husky install",
     "serve": "serve --single dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "dompurify": "^2.4.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2"
