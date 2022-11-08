@@ -7,10 +7,17 @@ function AuthProvider({ children }) {
 
     async function login(formData, callback) {
         const url = 'https://js1.10up.com/wp-json/jwt-auth/v1/token';
+        const bodyObject = {
+            username: formData.get('username'),
+            password: formData.get('password')
+        };
         const options = {
-            body: formData,
+            body: JSON.stringify(bodyObject, null, 2),
             method: 'POST',
-            mode: 'cors'
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            }
         };
         let response = {};
 
