@@ -39,6 +39,11 @@ Before starting the app you'll need to build it. You have two options for doing 
 * `npm run build:dev` - Generate a development build
 * `npm run build:prod` - Generate a production build
 
-Once the above is complete simply run `npm run serve` to launch a dev server instance of the app. After the command runs it will display a message indicating the web address you can reach the app at.
+Once the above is complete simply run `npm run serve` to serve an instance of the app. After the command runs it will display a message indicating the web address you can reach the app at.
 
 _Please note that if you serve this app with another server you may have to start at the root path (`/`) to browse the site due to how [React Router](https://reactrouter.com/) works. To configure a server to overcome this limitation see [here](https://github.com/remix-run/react-router/blob/v1.0.0/docs/guides/basics/Histories.md#configuring-your-server) for examples._
+
+## Ruminations
+
+* For this exercise I was instructed "Please try to avoid using tools that may help further the project along, which you have not built yourself unless the exercise states otherwise." I took that to mean [Create React App](https://create-react-app.dev/) and similar tools. So the build system, linter, Git hooks, etc. are all manually configured.
+* When passing incorrect login information to `https://js1.10up.com/wp-json/jwt-auth/v1/token` the response is not properly configured for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) so `fetch` cannot receive the "[jwt_auth] incorrect_password" response to parse for a message. But the `login` function is written so that if CORS is configured on the response it would display a proper error message.
