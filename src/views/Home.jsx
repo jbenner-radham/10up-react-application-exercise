@@ -21,8 +21,6 @@ function Home() {
 
     document.title = '10up Blog';
 
-    let postIndex = 0;
-
     return (
         <>
             <VerifyAuth />
@@ -34,7 +32,7 @@ function Home() {
 
             {/* Retrieve blog posts from WP API. */}
             <div itemScope itemType="https://schema.org/Blog">
-                {posts.map(post => <BlogPosting blogPost={post} key={(postIndex++).toString()} />)}
+                {posts.map(post => <BlogPosting blogPost={post} key={post.title.rendered} />)}
             </div>
         </>
     );
