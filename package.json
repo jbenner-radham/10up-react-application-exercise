@@ -25,7 +25,7 @@
     "build:dev": "cross-env NODE_ENV=development npm run build",
     "build:prod": "cross-env NODE_ENV=production npm run build",
     "dev": "cross-env NODE_ENV=development webpack serve",
-    "lint:js": "eslint src/**/*.{js,jsx} *.js",
+    "lint:js": "eslint . --ext .js --ext .jsx --ignore-path .gitignore",
     "prepare": "husky install",
     "serve": "serve --single dist",
     "test": "echo \"Error: no test specified\" && exit 1"
